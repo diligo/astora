@@ -1,0 +1,10 @@
+language: java
+sudo: false
+jdk:
+  - oraclejdk8
+notifications:
+  email: false
+script:
+  - mvn clean deploy -Droot.logging.level=INFO -Dgithub.artifact.repository.token=$GITHUB_ARTIFACT_REPOSITORY_TOKEN $ADDITIONAL_ARGUMENTS
+after_success:
+  - mvn jacoco:report coveralls:report -Droot.logging.level=INFO
