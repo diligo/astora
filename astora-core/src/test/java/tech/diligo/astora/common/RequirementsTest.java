@@ -514,6 +514,15 @@ public class RequirementsTest {
 
     // positive int
 
+    // TODO remove
+    public void throwsExceptionWhenIntValueIsNegative() {
+    }
+
+    // vs
+
+    public void checkPassesWhenIntValueIsPositive() {
+    }
+
     @Test
     public void requirePositive_CheckPassed_IntValueIsPositive() {
         Requirements.requirePositive(Integer.MAX_VALUE);
