@@ -9,6 +9,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>astora-core</module>
+        <module>astora-test-util</module>
     </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -67,6 +68,12 @@
                 <groupId>org.mockito</groupId>
                 <artifactId>mockito-core</artifactId>
                 <version>2.21.0</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>tech.diligo.astora</groupId>
+                <artifactId>astora-test-util</artifactId>
+                <version>${project.version}</version>
                 <scope>test</scope>
             </dependency>
         </dependencies>
