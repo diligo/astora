@@ -514,27 +514,18 @@ public class RequirementsTest {
 
     // positive int
 
-    // TODO remove
-    public void throwsExceptionWhenIntValueIsNegative() {
-    }
-
-    // vs
-
-    public void checkPassesWhenIntValueIsPositive() {
-    }
-
     @Test
-    public void requirePositive_CheckPassed_IntValueIsPositive() {
+    public void shouldNotThrowExceptionWhenIntValueIsPositive() {
         Requirements.requirePositive(Integer.MAX_VALUE);
     }
 
     @Test
-    public void requirePositiveWithMessage_CheckPassed_IntValueIsPositive() {
+    public void shouldNotThrowExceptionWithMessageWhenIntValueIsPositive() {
         Requirements.requirePositive(1, "varName");
     }
 
     @Test
-    public void requirePositive_ExceptionThrown_IntValueIsNegative() {
+    public void shouldThrowExceptionWhenIntValueIsNegative() {
         expectedException.expect(IllegalArgumentException.class);
         expectedException.expectMessage("-2147483648 must be > 0");
 
@@ -542,7 +533,7 @@ public class RequirementsTest {
     }
 
     @Test
-    public void requirePositive_ExceptionThrown_IntValueIsZero() {
+    public void shouldThrowExceptionWhenIntValueIsZero() {
         expectedException.expect(IllegalArgumentException.class);
         expectedException.expectMessage("0 must be > 0");
 
@@ -550,7 +541,7 @@ public class RequirementsTest {
     }
 
     @Test
-    public void requirePositiveWithMessage_ExceptionThrown_IntValueIsNegative() {
+    public void shouldThrowExceptionWithMessageWhenIntValueIsNegative() {
         expectedException.expect(IllegalArgumentException.class);
         expectedException.expectMessage("varName=-12345 must be > 0");
 
@@ -560,17 +551,17 @@ public class RequirementsTest {
     // positive long
 
     @Test
-    public void requirePositive_CheckPassed_LongValueIsPositive() {
+    public void shouldNotThrowExceptionWhenLongValueIsPositive() {
         Requirements.requirePositive(Long.MAX_VALUE);
     }
 
     @Test
-    public void requirePositiveWithMessage_CheckPassed_LongValueIsPositive() {
+    public void shouldNotThrowExceptionWithMessageWhenLongValueIsPositive() {
         Requirements.requirePositive(1L, "varName");
     }
 
     @Test
-    public void requirePositive_ExceptionThrown_LongValueIsNegative() {
+    public void shouldThrowExceptionWhenLongValueIsNegative() {
         expectedException.expect(IllegalArgumentException.class);
         expectedException.expectMessage("-9223372036854775808 must be > 0");
 
@@ -578,7 +569,7 @@ public class RequirementsTest {
     }
 
     @Test
-    public void requirePositive_ExceptionThrown_LongValueIsZero() {
+    public void shouldThrowExceptionWhenLongValueIsZero() {
         expectedException.expect(IllegalArgumentException.class);
         expectedException.expectMessage("0 must be > 0");
 
@@ -586,7 +577,7 @@ public class RequirementsTest {
     }
 
     @Test
-    public void requirePositiveWithMessage_ExceptionThrown_LongValueIsNegative() {
+    public void shouldThrowExceptionWithMessageWhenLongValueIsNegative() {
         expectedException.expect(IllegalArgumentException.class);
         expectedException.expectMessage("varName=-12345 must be > 0");
 
@@ -596,17 +587,17 @@ public class RequirementsTest {
     // positive float
 
     @Test
-    public void requirePositive_CheckPassed_FloatValueIsPositive() {
+    public void shouldNotThrowExceptionWhenFloatValueIsPositive() {
         Requirements.requirePositive(Float.MAX_VALUE);
     }
 
     @Test
-    public void requirePositiveWithMessage_CheckPassed_FloatValueIsPositive() {
+    public void shouldNotThrowExceptionWithMessageWhenFloatValueIsPositive() {
         Requirements.requirePositive(1.0f, "varName");
     }
 
     @Test
-    public void requirePositive_ExceptionThrown_FloatValueIsNegative() {
+    public void shouldThrowExceptionWhenFloatValueIsNegative() {
         expectedException.expect(IllegalArgumentException.class);
         expectedException.expectMessage("-3.4028235E38 must be > 0");
 
@@ -614,7 +605,7 @@ public class RequirementsTest {
     }
 
     @Test
-    public void requirePositive_ExceptionThrown_FloatValueIsZero() {
+    public void shouldThrowExceptionWhenFloatValueIsZero() {
         expectedException.expect(IllegalArgumentException.class);
         expectedException.expectMessage("0.0 must be > 0");
 
@@ -622,7 +613,7 @@ public class RequirementsTest {
     }
 
     @Test
-    public void requirePositiveWithMessage_ExceptionThrown_FloatValueIsNegative() {
+    public void shouldThrowExceptionWithMessageWhenFloatValueIsNegative() {
         expectedException.expect(IllegalArgumentException.class);
         expectedException.expectMessage("varName=-12345.0 must be > 0");
 
@@ -632,17 +623,17 @@ public class RequirementsTest {
     // positive double
 
     @Test
-    public void requirePositive_CheckPassed_DoubleValueIsPositive() {
+    public void shouldNotThrowExceptionWhenDoubleValueIsPositive() {
         Requirements.requirePositive(Double.MAX_VALUE);
     }
 
     @Test
-    public void requirePositiveWithMessage_CheckPassed_DoubleValueIsPositive() {
+    public void shouldNotThrowExceptionWithMessageWhenDoubleValueIsPositive() {
         Requirements.requirePositive(1.0, "varName");
     }
 
     @Test
-    public void requirePositive_ExceptionThrown_DoubleValueIsNegative() {
+    public void shouldThrowExceptionWhenDoubleValueIsNegative() {
         expectedException.expect(IllegalArgumentException.class);
         expectedException.expectMessage("-1.7976931348623157E308 must be > 0");
 
@@ -650,7 +641,7 @@ public class RequirementsTest {
     }
 
     @Test
-    public void requirePositive_ExceptionThrown_DoubleValueIsZero() {
+    public void shouldThrowExceptionWhenDoubleValueIsZero() {
         expectedException.expect(IllegalArgumentException.class);
         expectedException.expectMessage("0.0 must be > 0");
 
@@ -658,7 +649,7 @@ public class RequirementsTest {
     }
 
     @Test
-    public void requirePositiveWithMessage_ExceptionThrown_DoubleValueIsNegative() {
+    public void shouldThrowExceptionWithMessageWhenDoubleValueIsNegative() {
         expectedException.expect(IllegalArgumentException.class);
         expectedException.expectMessage("varName=-12345.0 must be > 0");
 
