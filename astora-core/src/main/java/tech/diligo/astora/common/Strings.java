@@ -16,10 +16,10 @@ public final class Strings {
         return EMPTY_STRING;
     }
 
-    public static char[] underlyingCharArray(String str) {
+    public static char[] getUnderlyingCharArray(String str) {
         requireNonNull(str);
 
-        Field valueField = Reflections.declaredFieldAccessible(String.class, STRING_FIELD_VALUE);
+        Field valueField = Reflections.getDeclaredFieldAndSetAccessible(String.class, STRING_FIELD_VALUE);
 
         try {
             return (char[]) valueField.get(str);

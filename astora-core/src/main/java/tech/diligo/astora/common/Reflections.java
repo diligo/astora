@@ -18,23 +18,23 @@ public final class Reflections {
      * @param method method information
      * @return method descriptor
      */
-    public static String methodDescriptor(Method method) {
+    public static String getMethodDescriptor(Method method) {
         StringBuilder builder = new StringBuilder(DEFAULT_METHOD_DESCRIPTOR_BUFFER_SIZE);
         builder.append('(');
 
         for (Class<?> parameterType : method.getParameterTypes()) {
-            methodDescriptor(builder, parameterType);
+            getMethodDescriptor(builder, parameterType);
         }
 
         builder.append(')');
-        methodDescriptor(builder, method.getReturnType());
+        getMethodDescriptor(builder, method.getReturnType());
         return builder.toString();
     }
 
-    private static void methodDescriptor(StringBuilder builder, Class<?> parameterType) {
+    private static void getMethodDescriptor(StringBuilder builder, Class<?> parameterType) {
         if (parameterType.isArray()) {
             builder.append('[');
-            methodDescriptor(builder, parameterType.getComponentType());
+            getMethodDescriptor(builder, parameterType.getComponentType());
         } else if (parameterType.isPrimitive()) {
             if (parameterType == byte.class) {
                 builder.append('B');
@@ -66,8 +66,8 @@ public final class Reflections {
      * @param method method information
      * @return method descriptor with method name
      */
-    public static String methodDescriptorWithName(Method method) {
-        return method.getName() + methodDescriptor(method);
+    public static String getMethodDescriptorWithName(Method method) {
+        return method.getName() + getMethodDescriptor(method);
     }
 
     /**
@@ -77,7 +77,7 @@ public final class Reflections {
      * @param fieldName name of the field
      * @return declared field
      */
-    public static Field declaredFieldAccessible(
+    public static Field getDeclaredFieldAndSetAccessible(
             Class<?> type, String fieldName) {
         try {
             Field field = type.getDeclaredField(fieldName);
@@ -95,7 +95,7 @@ public final class Reflections {
      * @param fieldName name of the field
      * @return declared field with changed "final" modifier
      */
-    public static Field declaredFieldModifiable(Class<?> type, String fieldName) {
+    public static Field getDeclaredFieldAndSetModifiable(Class<?> type, String fieldName) {
         try {
             Field field = type.getDeclaredField(fieldName);
             field.setAccessible(true);

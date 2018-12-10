@@ -12,7 +12,7 @@ public class ReflectionsTest {
     @Test
     public void shouldReturnAccessibleField() throws NoSuchFieldException, IllegalAccessException {
         ArrayList<?> list = new ArrayList<>();
-        Field field = Reflections.declaredFieldAccessible(ArrayList.class, "size");
+        Field field = Reflections.getDeclaredFieldAndSetAccessible(ArrayList.class, "size");
 
         assertEquals(0, field.get(list));
     }
@@ -20,7 +20,7 @@ public class ReflectionsTest {
     @Test
     public void shouldReturnModifiableField() throws IllegalAccessException {
         String str = new String("aaa");
-        Field field = Reflections.declaredFieldModifiable(String.class, "value");
+        Field field = Reflections.getDeclaredFieldAndSetModifiable(String.class, "value");
         field.set(str, "zzzaaabbb123".toCharArray());
 
         assertEquals("zzzaaabbb123", str);

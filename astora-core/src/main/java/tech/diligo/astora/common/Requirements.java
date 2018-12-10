@@ -355,35 +355,67 @@ public final class Requirements {
         return value;
     }
 
-    public static int requireNonPositive(int argument) {
-        if (argument > 0) {
-            throw new IllegalArgumentException("argument must be positive, was: " + argument);
+    public static int requireNonPositive(int value) {
+        if (value > 0) {
+            throw new IllegalArgumentException(value + " must be <= 0");
         }
 
-        return argument;
+        return value;
     }
 
-    public static long requireNonPositive(long argument) {
-        if (argument > 0L) {
-            throw new IllegalArgumentException("argument must be positive, was: " + argument);
+    public static int requireNonPositive(int value, String name) {
+        if (value > 0) {
+            throw new IllegalArgumentException(name + "=" + value + " must be <= 0");
         }
 
-        return argument;
+        return value;
     }
 
-    public static double requireNonPositive(double argument) {
-        if (argument > 0.0) {
-            throw new IllegalArgumentException("argument must be positive, was: " + argument);
+    public static long requireNonPositive(long value) {
+        if (value > 0L) {
+            throw new IllegalArgumentException(value + " must be <= 0");
         }
 
-        return argument;
+        return value;
     }
 
-    public static float requireNonPositive(float argument) {
-        if (argument > 0.0f) {
-            throw new IllegalArgumentException("argument must be positive, was: " + argument);
+    public static long requireNonPositive(long value, String name) {
+        if (value > 0L) {
+            throw new IllegalArgumentException(name + "=" + value + " must be <= 0");
         }
 
-        return argument;
+        return value;
+    }
+
+    public static float requireNonPositive(float value) {
+        if (value > 0.0f) {
+            throw new IllegalArgumentException(value + " must be <= 0");
+        }
+
+        return value;
+    }
+
+    public static float requireNonPositive(float value, String name) {
+        if (value > 0.0f) {
+            throw new IllegalArgumentException(name + "=" + value + " must be <= 0");
+        }
+
+        return value;
+    }
+
+    public static double requireNonPositive(double value) {
+        if (value > 0.0) {
+            throw new IllegalArgumentException(value + " must be <= 0");
+        }
+
+        return value;
+    }
+
+    public static double requireNonPositive(double value, String name) {
+        if (value > 0.0) {
+            throw new IllegalArgumentException(name + "=" + value + " must be <= 0");
+        }
+
+        return value;
     }
 }

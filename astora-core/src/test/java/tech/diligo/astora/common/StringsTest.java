@@ -1,6 +1,5 @@
 package tech.diligo.astora.common;
 
-import org.junit.Assert;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -55,7 +54,7 @@ public class StringsTest {
     @Test
     public void shouldGetUnderlayingStringCharacterArray() {
         String str = "abcdef";
-        char[] chars = Strings.underlyingCharArray(str);
+        char[] chars = Strings.getUnderlyingCharArray(str);
         chars[0] = '1';
         chars[1] = '2';
         chars[2] = '3';
